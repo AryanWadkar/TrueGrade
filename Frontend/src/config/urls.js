@@ -1,9 +1,10 @@
+const baseURL="http://16.171.225.141:8080";
 
 module.exports={
-    "getall":"http://localhost:8080/mentor/allstudents",
-    "addmentee":"http://localhost:8080/mentor/addmentee",
-    "getmentee":"http://localhost:8080/mentor/mentees",
-    "savemarks":"http://localhost:8080/mentor/savemarks",
-    "removementee":"http://localhost:8080/mentor/removementee",
-    "finalsubmit":"http://localhost:8080/mentor/finalsubmit"
+    "getall":`${baseURL}/mentor/allstudents`,
+    "addmentee":`${baseURL}/mentor/addmentee`,
+    "getmentee":`${baseURL}/mentor/mentees`,
+    "savemarks":`${baseURL}/mentor/savemarks`,
+    "removementee":`${baseURL}/mentor/removementee`,
+    "finalsubmit":`${baseURL}/mentor/finalsubmit`
 }
