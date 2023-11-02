@@ -26,30 +26,34 @@ const authenticateJWT = (req:Request, res:Response, next) => {
     }
 };
 
-const sendMail = (studentList) => {
+const sendMail = async (studentList) => {
     function generateEmailText(student) {
-        const { name, email, marks } = student;
-        const { score, maxscore } = marks;
-      
-        const scoreText = Object.entries(score)
-          .map(([category, value]) => {
-            const maxScore = maxscore[category];
-            return `- ${category}: ${value}/${maxScore}`;
-          })
-          .join('\n');
-      
-        const emailText = `Dear ${name},
-      
-      We are pleased to inform you that your marks have been submitted. Here are your final marks:
-      
-      ${scoreText}
-      
-      Thank you for your hard work. If you have any questions or concerns, please feel free to contact us at ${email}.
-      
-      Best regards,
-      The TrueGrade Team`;
-      
-        return emailText;
+        try{
+            const score=student.marks.score,maxscore=student.marks.maxScore;
+            const name=student.name;
+            const scoreText = Object.entries(score)
+              .map(([category, value]) => {
+                const currMaxScore = maxscore[category];
+                return `- ${category}: ${value}/${currMaxScore}`;
+              })
+              .join('\n');
+          
+            const emailText = `Dear ${name},
+          
+          We are pleased to inform you that your marks have been submitted. Here are your final marks:
+          
+          ${scoreText}
+          
+          Thank you for your hard work. If you have any questions or concerns, please feel free to contact your mentor}.
+          
+          Best regards,
+          The TrueGrade Team`;
+          
+            return emailText;
+        }catch(err){
+            console.log(err);
+        }
+        return "An Error occurred while generating your score data!";
       }
 
       try{
@@ -60,7 +64,8 @@ const sendMail = (studentList) => {
               pass:process.env.SMTP_APP_PASS
             }
        });
-       studentList.forEach(element => {
+
+       studentList.forEach(async(element) => {
             const mailBody=generateEmailText(element);
             let mailOptions={
                 from: process.env.SMTP_MAIL,
@@ -69,7 +74,7 @@ const sendMail = (studentList) => {
                 text: mailBody
               };
                 
-            transporter.sendMail(mailOptions, function(err, data) {});
+            await transporter.sendMail(mailOptions, function(err, data) {});
        });
 
     }catch(err)
