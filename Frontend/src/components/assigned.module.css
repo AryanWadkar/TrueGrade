@@ -1,0 +1,111 @@
+.bg{
+    height: calc(100vh - 30px);
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.heading{
+    font-size: 25px;
+    font-weight: 700;
+    width: 100%;
+    padding-bottom: 15px;
+    border-bottom:1px solid #C5C5C5;
+    margin-bottom: 15px;
+}
+
+.btnholder{
+    display: flex;
+    align-items: center;
+}
+
+.filters{
+    justify-content: flex-start;
+    margin-bottom: 20px;
+}
+
+.btn{
+    cursor: pointer;
+    margin-right:10px;
+    padding: 5px 8px;
+    border-radius: 3px;
+}
+
+.data{
+    flex-grow: 1;
+    overflow-y:scroll;
+}
+
+.marksWrapper{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+
+.marksInput{
+    border-radius: 3px;
+    background-color: #EDEDFF;
+    border: 2px solid #4B56D2;
+    max-width: 5vw;
+    text-align: center;
+}
+
+.bluebtn{
+    background-color: #4B56D2;
+    color: #FFF;
+}
+
+.redbtn{
+    background-color: #D92424;
+    color: #FFF;
+}
+
+.editbtn{
+    margin-top: 10px;
+    justify-content: flex-end;
+}
+
+.finsubmit{
+    padding: 5px 10px;
+    background-color: #1BAD56;
+    border-radius: 3px;
+    margin: 5px 0;
+    cursor: pointer;
+    width: max-content;
+    color: #FFF;
+}
+
+.index{
+    margin: 0 10px;
+}
+
+.info{
+    display: flex;
+    justify-content: space-between;
+}
+
+.loader{
+    height: 20%;
+    width: 20%;
+    align-self: center;
+    justify-self: center;
+    animation: spin infinite 5s linear;
+}
+
+.greyedbtn{
+    background-color: grey;
+    cursor: not-allowed;
+    pointer-events: none;
+    color: white;
+}
+
+@keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+}

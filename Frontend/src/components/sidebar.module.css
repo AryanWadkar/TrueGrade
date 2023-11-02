@@ -1,0 +1,81 @@
+.bg{
+    height:100vh;
+    width:20vw;
+    background-color: #4B56D2;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.upper{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    text-align: left;
+    color: white;
+    height: 100%;
+}
+
+.greet{
+    padding: 0 20px;
+    height: 15%;
+    font-size: large;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    justify-content: center;
+    align-items: flex-start;
+    padding-bottom: 5px;
+    border-bottom: 2px solid #C5C5C5;
+}
+
+.wish{
+    margin: 0;
+    padding: 0;
+    font-weight: 400;
+    font-size: 20px;
+}
+
+.mentor{
+    margin: 0;
+    padding: 0;
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.btn{
+    padding: 0 20px;
+    margin: 0;
+    height: 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.sel{
+    background-color: white;
+    color: #4B56D2;
+    transition: 0.5s all;
+}
+
+.logout{
+    background-color: white;
+    height: 8vh;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0 20px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.logout:hover{
+    background-color: #d92424;
+    color: white;
+}
+.lgtxt{
+    margin-left: 10px;
+}
